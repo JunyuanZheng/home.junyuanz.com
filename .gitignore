@@ -1,0 +1,11 @@
+# Dependency directories
+node_modules/
+
+# MacOS System
+.DS_Store
+
+# npm-debug log
+npm-debug.log
+
+# next.js framework
+\.next/
