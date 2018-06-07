@@ -1,0 +1,14 @@
+version: '3.4'
+
+services:
+  node:
+      image: 790529525784.dkr.ecr.us-west-2.amazonaws.com/junyuanz-home:latest
+      volumes:
+        - /var/www/junyuanz:/app/certbot
+        - /etc/letsencrypt/archive:/app/cert/ssl/archive
+        - /etc/letsencrypt/live:/app/cert/ssl/live
+      ports:
+        - 80:80
+        - 443:443
+      container_name: junyuanz-home-production
+      command: yarn run start

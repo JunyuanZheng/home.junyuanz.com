@@ -1,15 +1,37 @@
-import Index from "../index.js";
 import { Layout } from "antd";
-import { Footer } from "../components";
+import React, { Component } from "react";
+import Index from "../index.js";
+import { Footer, Header, Content } from "../components";
+import { notification } from "antd";
 
-export default () => (
-  <Index>
-    <Layout.Header>abc</Layout.Header>
-    <Layout.Content style={{ padding: "0 50px" }}>
-      <div style={{ background: "#fff", padding: 24, minHeight: 280 }}>
-        Content
-      </div>
-    </Layout.Content>
-    <Footer />
-  </Index>
-);
+export default class IndexPage extends Component {
+  componentDidMount() {
+    notification.info({
+      message: "Tech Stack",
+      description:
+        "React.js SSR, Node.js, Express.js, EC2, Route 53, ECR, Docker, Docker Compose"
+    });
+  }
+
+  render() {
+    return (
+      <Index>
+        <Layout
+          style={{
+            minHeight: "100vh"
+          }}
+        >
+          <Header />
+          <Layout.Content
+            style={{
+              background: "#fff"
+            }}
+          >
+            <Content />
+          </Layout.Content>
+          <Footer />
+        </Layout>
+      </Index>
+    );
+  }
+}

@@ -1,5 +1,6 @@
 import { Layout } from "antd";
 import React, { Component } from "react";
+import Contact from "./Contact";
 
 export default class Footer extends Component {
   render() {
@@ -8,10 +9,20 @@ export default class Footer extends Component {
         style={{
           transition: "opacity 0.5s",
           background: "#fff",
-          marginTop: "24px"
+          marginTop: "24px",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center"
         }}
       >
-        <div>© 2018 Junyuan Zheng</div>
+        <Contact />
+        <div
+          style={{
+            textAlign: "center"
+          }}
+        >
+          © 2018 Junyuan Zheng
+        </div>
       </Layout.Footer>
     );
   }

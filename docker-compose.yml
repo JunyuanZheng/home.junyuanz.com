@@ -1,0 +1,29 @@
+version: '3.4'
+
+services:
+  node:
+      build:
+        context: .
+        dockerfile: DockerfileDevelopment
+      ports:
+        - 80:80
+        - 443:443
+      volumes:
+        - node_modules:/app/node_modules
+        - ./localhost.crt:/app/localhost.crt
+        - ./localhost.key:/app/localhost.key
+        - ./package.json:/app/package.json
+        - ./yarn.lock:/app/yarn.lock
+        - ./.babelrc:/app/.babelrc
+        - ./static:/app/static
+        - ./components:/app/components
+        - ./pages:/app/pages
+        - ./index.js:/app/index.js
+        - ./next.config.js:/app/next.config.js
+        - ./server.js:/app/server.js
+      container_name: junyuanz-home-dev
+      command: yarn run dev
+
+volumes:
+  node_modules:
+    driver: local

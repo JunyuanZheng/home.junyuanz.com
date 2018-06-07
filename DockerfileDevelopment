@@ -1,0 +1,13 @@
+FROM node:9.11.1-alpine
+
+# File Author / Maintainer
+MAINTAINER Junyuan Zheng
+
+ENV NPM_CONFIG_LOGLEVEL warn
+
+# Provides cached layer for node_modules
+RUN mkdir -p /app
+
+WORKDIR /app
+
+EXPOSE 3000

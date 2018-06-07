@@ -1,3 +1,5 @@
 import Footer from "./Footer";
+import Header from "./Header";
+import Content from "./Content";
 
-export { Footer };
+export { Footer, Header, Content };
