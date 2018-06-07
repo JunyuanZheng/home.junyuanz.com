@@ -12,7 +12,6 @@ const app = next({ dev });
 app.prepare().then(() => {
   const server = express();
 
-  server.disable("x-powered-by");
   server.use(helmet());
   server.use(
     helmet.contentSecurityPolicy({
@@ -23,7 +22,8 @@ app.prepare().then(() => {
         fontSrc: ["'self'", "data:", "at.alicdn.com"],
         imgSrc: ["'self'"],
         connectSrc: ["'self'"],
-        workerSrc: ["'self'"]
+        workerSrc: ["'self'"],
+        objectSrc: ["'none'"]
       }
     })
   );
